@@ -18,6 +18,10 @@ import LoginForm from './components/forms/LoginForm.jsx';
 // ✅ New imports for protected routing
 import Dashboard from './components/common/Dashboard.jsx';   
 import ProtectedRoute from './components/common/ProtectedRoute.jsx'; 
+import { API_BASE } from './config'
+
+axios.post(`${API_BASE}/login`, { email, password })
+
 
 function App() {
   const loginRef = useRef();
