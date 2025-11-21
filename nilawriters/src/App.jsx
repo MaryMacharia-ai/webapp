@@ -1,6 +1,7 @@
 import './App.css';
 import { useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import axios from 'axios'; // ✅ Added axios import
 
 import Navigation from './components/layout/Navigation.jsx';
 import Hero from './components/sections/Hero.jsx';
@@ -15,14 +16,9 @@ import Footer from './components/layout/Footer.jsx';
 import SignUpForm from './components/forms/SignUpForm.jsx';
 import LoginForm from './components/forms/LoginForm.jsx';
 
-// ✅ New imports for protected routing
+// ✅ Protected routing imports
 import Dashboard from './components/common/Dashboard.jsx';   
 import ProtectedRoute from './components/common/ProtectedRoute.jsx'; 
-import { API_BASE } from './config'
-
-axios.post(`${API_BASE}/login`, { email, password })
-
-
 
 function App() {
   const loginRef = useRef();
@@ -39,7 +35,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Public route: Home page with all your sections */}
+        {/* Public route: Home page */}
         <Route
           path="/"
           element={
@@ -80,7 +76,7 @@ function App() {
           }
         />
 
-        {/* ✅ Protected route: Dashboard */}
+        {/* Protected route: Dashboard */}
         <Route
           path="/dashboard"
           element={
