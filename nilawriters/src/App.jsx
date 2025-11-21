@@ -1,7 +1,8 @@
 import './App.css';
 import { useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import axios from 'axios'; // ✅ Added axios import
+import axios from "axios";
+import { API_BASE } from "./config.js";
 
 import Navigation from './components/layout/Navigation.jsx';
 import Hero from './components/sections/Hero.jsx';
