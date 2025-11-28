@@ -1,0 +1,16 @@
+/* App.css — keep it minimal */
+
+/* Tailwind resets sometimes require setting body defaults */
+body {
+  @apply bg-white text-neutral-dark font-sans antialiased;
+}
+
+/* Smooth transitions for theme + UI elements */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Optional: global container width override (if needed) */
+/* .container {
+  @apply max-w-[1280px] mx-auto px-6;
+} */
