@@ -1,5 +1,6 @@
 // src/components/layout/Navbar.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -33,21 +34,21 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* ✅ AUTH BUTTONS (DESKTOP) */}
+        {/* AUTH BUTTONS (DESKTOP) */}
         <div className="hidden md:flex items-center gap-4">
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="text-gray-700 hover:text-[#0B9AA6] transition font-medium"
           >
             Log In
-          </a>
+          </Link>
 
-          <a
-            href="/signup"
+          <Link
+            to="/signup"
             className="bg-[#0B9AA6] text-white px-5 py-2.5 rounded-xl font-semibold shadow hover:opacity-90 transition"
           >
             Sign Up
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -61,7 +62,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* ✅ MOBILE MENU */}
+      {/* MOBILE MENU */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
           open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
@@ -78,21 +79,23 @@ const Navbar = () => {
             </a>
           ))}
 
-          {/* ✅ MOBILE AUTH */}
+          {/* MOBILE AUTH */}
           <div className="pt-4 border-t space-y-4">
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="block text-gray-700 hover:text-[#0B9AA6] font-medium"
+              onClick={() => setOpen(false)}
             >
               Log In
-            </a>
+            </Link>
 
-            <a
-              href="/signup"
+            <Link
+              to="/signup"
               className="block text-center bg-[#0B9AA6] text-white py-3 rounded-xl font-semibold shadow hover:opacity-90 transition"
+              onClick={() => setOpen(false)}
             >
               Sign Up
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -101,4 +104,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
