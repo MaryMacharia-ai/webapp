@@ -9,11 +9,11 @@ const Dashboard = () => {
     if (!token) {
       navigate("/login");
     }
-  }, []);
+  }, [navigate]); // ✅ added navigate to dependency (best practice)
 
   const logout = () => {
     localStorage.removeItem("token");
-    navigate("/login");
+    navigate("/"); // ✅ send user back to Home instead of Login
   };
 
   return (
