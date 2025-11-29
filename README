@@ -119,7 +119,9 @@ Admin Dashboard
 Writers and admins can manage users, orders, and services.
 Payment Gateway Integration
 Add Mpesa, PayPal, or Stripe for online payments.
-## Responsive Design Evidence
+
+
+## Responsive Design Evidence (on the attached files in the webapp repository)
 
 ### Large Screen (LG)
 ![LG](./screenshots/LG-desktop.png)
